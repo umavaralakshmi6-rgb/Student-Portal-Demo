@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Student Portal</title>
+</head>
+<body>
+  <h1>Student Portal Demo</h1>
+
+  <h2>Add Student</h2>
+  <form onsubmit="addStudent(); return false;">
+    Name: <input type="text" id="name" required>
+    Roll: <input type="text" id="roll" required>
+    Grade: <input type="number" id="grade" required>
+  </form>
+
+  <h2>Student List</h2>
+  <ul id="list"></ul>
+
+  <script>
+    function addStudent() {
+      let name = document.getElementById("name").value;
+      let roll = document.getElementById("roll").value;
+      let grade = document.getElementById("grade").value;
+
+      let li = document.createElement("li");
+      li.textContent = name + " (Roll: " + roll + ", Grade: " + grade + ")";
+      document.getElementById("list").appendChild(li);
+
+      // clear form
+      document.getElementById("name").value = "";
+      document.getElementById("roll").value = "";
+      document.getElementById("grade").value = "";
+    }
+  </script>
+</body>
+</html>
